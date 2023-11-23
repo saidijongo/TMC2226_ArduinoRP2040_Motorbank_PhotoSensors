@@ -1,6 +1,5 @@
 #include <Arduino.h>
 
-// Arduino Pins and Constant Values
 const int RELAY_PIN[] = {6, 7, 8, 9, 10, 11};
 
 #define EN_PIN    5 // enable
@@ -12,7 +11,7 @@ const int LEFT_SENSOR_PIN = 12;
 
 const float SENSOR_BACK_STEP = 2850; // 3300 8 degrees 2850
 const float STEP_ANGLE = 0.0072;
-const int STEP_DELAY = 1000; // Initial step delay value
+const int STEP_DELAY = 1000; // Initial step delay
 
 float _step_start_position = 0;
 float _step_end_position = 0;
@@ -20,7 +19,7 @@ float _step_current_position = 0;
 
 float _step_zero_angle = 2250; // 8 degrees from the sensor
 
-int _step_delay = STEP_DELAY; // Sensor response delay
+int _step_delay = STEP_DELAY; 
 
 enum class MotorState { STOPPED, MOVING_CW, MOVING_CCW };
 MotorState _motorState = MotorState::STOPPED;
