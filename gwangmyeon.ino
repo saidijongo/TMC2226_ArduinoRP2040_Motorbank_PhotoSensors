@@ -1,6 +1,5 @@
 #include <Arduino.h>
 
-// Arduino Pins and Constant Values
 const int EN_PIN = 5;    // enable, active when LOW
 const int DIR_PIN = 3;   // direction, (DIR_PIN, isClockwise ? HIGH : LOW)
 const int STEP_PIN = 4;  // step, 1.8 degrees per step.
@@ -59,9 +58,9 @@ void motorStep(bool isClockwise, int steps) {
     delayMicroseconds(_step_delay);
 
     if (isClockwise)
-      _step_current_position++; // Update the actual motor position for clockwise movement
+      _step_current_position++; 
     else
-      _step_current_position--; // Update the actual motor position for counterclockwise movement
+      _step_current_position--; 
   }
 
   digitalWrite(EN_PIN, HIGH);
@@ -158,7 +157,7 @@ void initializeMotor() {
   int old_step_delay = _step_delay;
 
   do {
-    motorStep(false, 1); // Rotate CCW until right sensor is interrupted
+    motorStep(false, 1); 
     stepOverCheck--;
 
     if (stepOverCheck < 0) {
