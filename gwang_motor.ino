@@ -1,3 +1,5 @@
+ "ST,0,MOTOR,0,150,100,ED\r\n"
+   
 #include <Arduino.h>
 
 const int EN_PIN = 5;    // enable, active when LOW
@@ -52,7 +54,7 @@ void moveMotor(int angle, int speedPercent) {
   digitalWrite(DIR_PIN, isClockwise ? HIGH : LOW);
   digitalWrite(EN_PIN, LOW);
 
-  int stepDelay = map(speedPercent, 0, 100, 1600, 20); // Adjust this value
+  int stepDelay = map(speedPercent, 0, 100, 1600, 20); 
 
   for (int i = 0; i < steps; i++) {
     if (digitalRead(TOP_SENSOR_PIN) == LOW && isClockwise) {
