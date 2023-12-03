@@ -1,16 +1,15 @@
 #include <Arduino.h>
 
-// Arduino Pins and Constant Values
-const int EN_PIN = 5;  // enable, active when LOW
+const int EN_PIN = 5;  // active when LOW
 const int DIR_PIN = 3; // direction, (DIR_PIN, isClockwise ? LOW : HIGH)
-const int STEP_PIN = 4; // step, for-loop step angles
+const int STEP_PIN = 4; 
 
 const int RIGHT_SENSOR_PIN = 13;
 const int LEFT_SENSOR_PIN = 12;
 
-const float SENSOR_BACK_STEP = 50; // 3300 8 degrees 2850
-const float STEP_ANGLE = 1.8; //0.0072;
-const int STEP_DELAY = 1000; // Initial step delay value 64
+const float SENSOR_BACK_STEP = 50; // 7
+const float STEP_ANGLE = 1.8;
+const int STEP_DELAY = 1000; 
 
 float _step_start_position = 0;
 float _step_end_position = 0;
@@ -35,7 +34,7 @@ void setup() {
 
   Serial.begin(115200);
   Serial.flush();
-  initializeMotor(); // Initialize the motor at startup
+  initializeMotor();
 }
 
 void motorStep(bool isClockwise, int steps) {
