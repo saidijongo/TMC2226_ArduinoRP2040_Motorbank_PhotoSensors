@@ -1,8 +1,8 @@
 #include <Arduino.h>
 
-const int EN_PIN = 5;            // Enable, active when LOW
-const int DIR_PIN = 3;           // Direction, (DIR_PIN, isClockwise ? HIGH : LOW)
-const int STEP_PIN = 4;          // Step, 1.8 degrees per step.
+const int EN_PIN = 5;         // Enable, active when LOW
+const int DIR_PIN = 3;        // Direction, (DIR_PIN, isClockwise ? HIGH : LOW)
+const int STEP_PIN = 4;       //1.8 degrees per step.
 
 const int TOP_SENSOR_PIN = 13;
 const int BOTTOM_SENSOR_PIN = 12;
@@ -50,9 +50,9 @@ String getValue(String data, char separator, int index) {
 void moveMotor(int angle, int speedPercent) {
   int direction = (angle > _angle_current_position) ? 1 : -1;
   int steps = abs(angle / STEP_ANGLE - _angle_current_position / STEP_ANGLE);
-  int delayTime = map(speedPercent, 0, 100, 1000, 20);  // Adjust the mapping based on your motor and driver
+  int delayTime = map(speedPercent, 0, 100, 1000, 20); 
 
-  digitalWrite(EN_PIN, LOW);  // Enable the motor
+  digitalWrite(EN_PIN, LOW); 
   digitalWrite(DIR_PIN, (direction == 1) ? HIGH : LOW);
 
   for (int i = 0; i < steps; i++) {
