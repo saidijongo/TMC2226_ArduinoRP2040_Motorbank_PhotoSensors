@@ -8,16 +8,16 @@ const int STEP_PIN = 4; // step, for-loop step angles
 const int TOP_SENSOR_PIN = 12;
 const int BOTTOM_SENSOR_PIN = 13;
 
-const float SENSOR_BACK_STEP = 50; // 3300 8 degrees 2850
+const float SENSOR_BACK_STEP = 50; // 7 degrees
 const float STEP_ANGLE = 1.8; // 0.0072;
 const int STEP_DELAY = 1000; // Initial step delay value 64
 
 float _step_start_position = 0;
 float _step_end_position = 0;
 float _step_current_position = 0;
-float _step_zero_angle = 50; // 8 degrees from the sensor
+float _step_zero_angle = 50; // 7 degrees from the sensor
 
-int _step_delay = STEP_DELAY; // Sensor response delay
+int _step_delay = STEP_DELAY;
 
 bool isTopSensorLow = true;
 bool isBottomSensorLow = true;
@@ -28,7 +28,7 @@ void stopMotor() {
 
 void motorPWM(bool isClockwise, int steps) {
   for (int i = 0; i < steps; i++) {
-    int step_current_position = _step_current_position; // Store the current position
+    int step_current_position = _step_current_position; 
 
     digitalWrite(DIR_PIN, isClockwise ? LOW : HIGH);
     delayMicroseconds(_step_delay);
@@ -38,11 +38,11 @@ void motorPWM(bool isClockwise, int steps) {
     delayMicroseconds(_step_delay);
 
     if (isClockwise)
-      step_current_position++; // Update the stored position for clockwise movement
+      step_current_position++; 
     else
-      step_current_position--; // Update the stored position for counterclockwise movement
+      step_current_position--; 
 
-    _step_current_position = step_current_position; // Update the actual motor position
+    _step_current_position = step_current_position; 
   }
 }
 
