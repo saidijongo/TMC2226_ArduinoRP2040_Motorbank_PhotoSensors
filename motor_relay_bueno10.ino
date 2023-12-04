@@ -113,7 +113,6 @@ void relayControl(String relayCommand) {
     return;
   }
 
-  // Check and update the relay state
   if (relayState == 1 && digitalRead(RELAY_PIN[relayPinIndex]) == LOW) {
     // Turn ON (HIGH) only if it's currently OFF (LOW)
     digitalWrite(RELAY_PIN[relayPinIndex], HIGH);
