@@ -46,8 +46,6 @@ void motorPWM(bool isClockwise, int steps) {
   }
 }
 
-///////
-
 void moveMotor(int angle, int speedPercent) {
   int steps = static_cast<int>((angle - _step_current_position) / STEP_ANGLE);
 
@@ -99,12 +97,6 @@ void moveMotor(int angle, int speedPercent) {
   Serial.print("ST,0,MOTOR,OK," + String(_step_current_position * STEP_ANGLE) + "," + String(speed) + ",ED\r\n");
 }
 
-
-////////
-
-
-
-
 void setup() {
   pinMode(EN_PIN, OUTPUT);
   pinMode(DIR_PIN, OUTPUT);
@@ -128,7 +120,7 @@ void setup() {
   // Mark this point as a home base
   _step_start_position = 0;
   _step_current_position = 0;
-  _step_end_position = 0; // Initialize _step_end_position
+  _step_end_position = 0; 
 }
 
 void loop() {
