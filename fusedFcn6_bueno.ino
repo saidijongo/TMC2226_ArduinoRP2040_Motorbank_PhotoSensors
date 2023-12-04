@@ -1,4 +1,7 @@
-
+//"ST,0,MOTOR,0,30,90,ED\r\n"
+//"ST,0,CARD_READER,1,ED\r\n"
+//"ST,0,PRINTER,1,ED\r\n"
+//"ST,0,PRINTER,0,ED\r\n"
 #include <Arduino.h>
 
 const int EN_PIN = 5;  
