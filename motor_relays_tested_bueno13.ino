@@ -58,7 +58,6 @@ void stopMotor() {
   digitalWrite(EN_PIN, LOW);
   _motorRunning = false;
 }
-
 void motorStep(bool isClockwise, int steps) {
   for (int i = 0; i < steps; i++) {
     int step_current_position = _step_current_position;
@@ -194,7 +193,3 @@ void loop() {
   }
 }
 
-//"ST,0,MOTOR,0,30,90,ED\r\n"
-//"ST,0,CARD_READER,1,ED\r\n"
-//"ST,0,PRINTER,1,ED\r\n"
-//"ST,0,PRINTER,0,ED\r\n"
