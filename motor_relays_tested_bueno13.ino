@@ -1,4 +1,5 @@
-//test one
+//Ignoring the Bottom sensor
+//Continuous rotation during the INIT
 #include <Arduino.h>
 
 const int EN_PIN = 5;
