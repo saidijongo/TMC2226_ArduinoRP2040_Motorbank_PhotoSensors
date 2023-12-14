@@ -1,5 +1,6 @@
 //Ignoring the Bottom sensor
 //Continuous rotation during the INIT
+//1. Printer 2. Dispenser 3. Card reader 4. Pasport reader
 #include <Arduino.h>
 
 const int EN_PIN = 5;
